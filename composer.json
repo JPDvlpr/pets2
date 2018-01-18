@@ -1,0 +1,16 @@
+{
+  "name": "jpappoe/pets",
+  "authors": [
+    {
+      "name": "Jhakon Pappoe",
+      "email": "jpappoe@mail.greenriver.edu"
+    },
+    {
+      "name": "Navtej Singh",
+      "email": "nsingh20@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
