@@ -23,27 +23,17 @@ $f3->route('GET /',
     }
 );
 
-$f3->route('GET /pets',
-    function () {
-       echo'Home';
-    }
-);
 
-$f3->route('GET /pets/show',
-    function () {
-        echo 'show';
-    }
-);
 
 $f3->route('GET /pets2/show/@animal', function ($f3, $params) {
     switch ($params['animal']) {
         case 'cat':
-            //echo "<img src='images/cat.jpg'>";
-            echo 'cats';
+            echo "<img src='../../images/cat.jpg' alt='cat'>";
+            //echo 'cats';
             break;
         case 'dog':
-            //echo "<img src='images/dog.jpeg'>";
-            echo 'dogs';
+            echo "<img src='../../images/dog.jpeg'>";
+            //echo 'dogs';
             break;
         case 'cow':
             $f3->reroute('/');
