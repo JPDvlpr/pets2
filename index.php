@@ -1,22 +1,58 @@
 <?php
-//require the autolaod file
-require_once ('vendor/autoload.php');
+/**
+ * Created by PhpStorm.
+ * User: jpapp
+ * Date: 1/18/2018
+ * Time: 1:30 PM
+ */
 
-//create an instance of the base class
+//error reporting
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+require_once('vendor/autoload.php');
+
 $f3 = Base::instance();
 
-//Set debug level
-$f3->set('DEBUG',3);
+//set debug level
+$f3->set('DEBUG', 3);
 
-//define a default route
-$f3->route('GET /pets2',
-    function() {
-        $view = new View;
-        echo $view->rendor
-        ('views/home.html');
+$f3->route('GET /',
+    function () {
+        echo'default';
     }
 );
 
+$f3->route('GET /pets',
+    function () {
+       echo'Home';
+    }
+);
+
+$f3->route('GET /pets/show',
+    function () {
+        echo 'show';
+    }
+);
+
+$f3->route('GET /pets2/show/@animal', function ($f3, $params) {
+    switch ($params['animal']) {
+        case 'cat':
+            //echo "<img src='images/cat.jpg'>";
+            echo 'cats';
+            break;
+        case 'dog':
+            //echo "<img src='images/dog.jpeg'>";
+            echo 'dogs';
+            break;
+        case 'cow':
+            $f3->reroute('/');
+//        404 error
+        default:
+            //$f3->error(404);
+            echo 'neither animal';
+    }
+});
+
 //run fat free
 $f3->run();
-?>
