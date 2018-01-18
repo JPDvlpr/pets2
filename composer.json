@@ -1,0 +1,16 @@
+{
+  "name":"navtej/328/pet2",
+  "authors":[
+    {
+      "name":"Navtej Singh",
+      "email":"nsingh20@mail.greenriver.edu"
+    }
+    {
+      "name":"Jhakon",
+      "email":"jpappoe@mail.greenriver.edu"
+    }
+  ],
+  "require":{
+    "bcosca/fatfree-core":"dev-master"
+  }
+}
